@@ -1,45 +1,45 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Mar 22, 2017 3:29:12 PM by Hibernate Tools 5.2.1.Final -->
+<!-- Generated Mar 23, 2017 5:22:07 PM by Hibernate Tools 5.2.1.Final -->
 <hibernate-mapping>
     <class name="com.launch.ecommerce.model.ECustomer" table="e_customer" catalog="launchtech" optimistic-lock="version">
-        <id name="id" type="java.lang.Long">
+        <id name="id" type="java.lang.Integer">
             <column name="id" />
             <generator class="identity" />
         </id>
-        <property name="custEbayId" type="string">
-            <column name="cust_ebay_id" length="50" not-null="true" />
+        <property name="ebayId" type="string">
+            <column name="ebay_id" length="50" not-null="true" unique="true" />
         </property>
-        <property name="custName" type="string">
-            <column name="cust_name" length="50" />
+        <property name="name" type="string">
+            <column name="name" length="50" />
         </property>
-        <property name="custAddrStreet" type="string">
-            <column name="cust_addr_street" length="128" not-null="true" />
+        <property name="street" type="string">
+            <column name="street" length="128" not-null="true" />
         </property>
-        <property name="custAddrCity" type="string">
-            <column name="cust_addr_city" length="50" not-null="true" />
+        <property name="city" type="string">
+            <column name="city" length="50" not-null="true" />
         </property>
-        <property name="custAddrState" type="string">
-            <column name="cust_addr_state" length="16" not-null="true" />
+        <property name="state" type="string">
+            <column name="state" length="16" not-null="true" />
         </property>
-        <property name="custAddrePostcode" type="string">
-            <column name="cust_addre_postcode" length="10" not-null="true" />
+        <property name="postcode" type="string">
+            <column name="postcode" length="10" not-null="true" />
         </property>
-        <property name="custAddrCountry" type="string">
-            <column name="cust_addr_country" length="10" not-null="true" />
+        <property name="country" type="string">
+            <column name="country" length="10" not-null="true" />
         </property>
-        <property name="custMobile" type="string">
-            <column name="cust_mobile" length="20" />
+        <property name="mobile" type="string">
+            <column name="mobile" length="20" />
         </property>
-        <property name="custPhone" type="string">
-            <column name="cust_phone" length="20" />
+        <property name="phone" type="string">
+            <column name="phone" length="20" />
         </property>
-        <property name="custEmail" type="string">
-            <column name="cust_email" length="128" />
+        <property name="email" type="string">
+            <column name="email" length="128" />
         </property>
-        <property name="createDate" type="date">
-            <column name="create_date" length="10" not-null="true" />
+        <property name="createDate" type="timestamp">
+            <column name="create_date" length="19" not-null="true" />
         </property>
         <property name="updatetime" type="timestamp">
             <column name="updatetime" length="19" not-null="true" />
