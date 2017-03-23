@@ -185,5 +185,55 @@ public class ECustomer {//implements java.io.Serializable {
 	public void setUpdatetime(Date updatetime) {
 		this.updatetime = updatetime;
 	}
+	
+	@Override
+	public int hashCode(){
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + id;
+		result = prime * result + ((ebayId == null) ? 0 : ebayId.hashCode());
+		
+		return result;
+	}
+	
+	@Override
+	public boolean equals(Object obj){
+		if(this == obj) return true;
+		if(obj == null) return false;
+		if (!(obj instanceof ECustomer))
+            return false;
+        ECustomer other = (ECustomer) obj;
+        if (id != other.id)
+            return false;
+        if (ebayId == null) {
+            if (other.ebayId != null)
+                return false;
+        } else if (!ebayId.equals(other.ebayId))
+            return false;
+		
+		return true;
+	}
+	
+	/*
+	 * private String street;
+	private String city;
+	private String state;
+	private String postcode;
+	private String country;
+	private String mobile;
+	private String phone;
+	private String email;
+	private Date createDate;
+	private Date updatetime;
+	 * 
+	 * 
+	 */
+	@Override
+	public String toString(){
+		return "Customer [id=" + id + ", ebayId="  + ebayId + ", name=" + name + ", crateDate="
+                + createDate + ", udatetieme=" + updatetime + ", email=" + email + "]";
+	}
+	
+	
 
 }
