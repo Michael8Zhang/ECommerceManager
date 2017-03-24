@@ -231,7 +231,9 @@ public class ECustomer {//implements java.io.Serializable {
 	@Override
 	public String toString(){
 		return "Customer [id=" + id + ", ebayId="  + ebayId + ", name=" + name + ", crateDate="
-                + createDate + ", udatetieme=" + updatetime + ", email=" + email + "]";
+                + createDate + ", street=" + street + ", city=" + city + ", state=" + state + ", postcode="
+				+ postcode + ", country=" + country + ", mobile=" + mobile + ", phone=" + phone + ", udatetieme="
+                + updatetime + ", email=" + email + "]";
 	}
 	
 	
