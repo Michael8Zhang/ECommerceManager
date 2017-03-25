@@ -10,6 +10,9 @@ import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.launch.ecommerce.model.ECustomer;;
 
 @Controller
 @RequestMapping("/")
@@ -26,7 +29,7 @@ public class ECommerceController {
 	 */
 	@RequestMapping(value = { "/", "/list" }, method = RequestMethod.GET)
 	public String listCustomers(Model model) {
-		List<Customer> customers = service.findAllCustomers();
+		List<ECustomer> customers = service.findAllCustomers();
 		return "allcustomers";
 	}
 	
@@ -35,8 +38,8 @@ public class ECommerceController {
 	 */
 	@RequestMapping(value = { "/new" }, method = RequestMethod.GET)
 	public String newCustomer(ModelMap model){
-		Customer customer = new Customer();
-		model.addAttribute("customer", customer);
+		ECustomer customer = new ECustomer();
+		model.addAttribute("ecustomer", customer);
 		model.addAttribute("edit", false);	
 		return "addcustomer";
 	}
@@ -45,7 +48,7 @@ public class ECommerceController {
 	 * Edit a exist customer infomation
 	 */
 	@RequestMapping(value = { "/new" }, method = RequestMethod.POST)
-	public String newCustomer(@Valid Customer customer, BindingResult result, ModelMap model){
+	public String newCustomer(@Valid ECustomer customer, BindingResult result, ModelMap model){
 		if (result.hasErrors()) {
 			return "addcustomer";
 		}
